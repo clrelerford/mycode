@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-#FOODS TO DETERMINE YOUR ZODIAC SIGN
+#SELECT YOUR MEAL TO DETERMINE YOUR ASTROLOGICAL ELEMENT
 
 drinkq = {
         “Question: What would you like to drink?”,
-        “water”: “earth”,
+        "answers" : {["answer" : “water”, "sign" : “earth”}, {"answer" : "lemonade", "sig
         “lemonade”: “water”,
         “milk”: “air”,
         “soda”: “fire”
