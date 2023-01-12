@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
-#WHICH OLYMPIC SPORT IS BEST FIT FOR YOUR BODY TYPE?
+"""Which Olympic Sport Is Best Fit For Your Body Type? | CRelerford"""
 
 import time
 
-#create a dictionary with key:value pairs
-
+#create a question dictionary
 question1 = {
         "Question": "How tall are you?",
         "A. Very, and don't ask me how the weather is up there.": "[basketball, high_jumping, boxing, hurdling, rowing, swimming, tennis, throwing, volleyball]",
@@ -59,31 +58,18 @@ question6_list = list(question6.keys())
 
 print("What Olympic Sport Is Best Fit For Your Body Type?")
 
+#added time to give user a moment to read title
 time.sleep(1)
 
 def main():
-        archery = 0
-        basketball = 0
-        boxing = 0
-        cycling = 0 
-        diving = 0
-        gymnastics = 0
-        high_jumping = 0
-        hurdling = 0
-        marathon = 0
-        rowing = 0
-        running = 0
-        shooting = 0
-        soccer = 0
-        sprinting = 0
-        swimming = 0
-        tennis = 0
-        throwing = 0
-        volleyball = 0
-        water_polo = 0
-        weightlifting = 0
-        wrestling = 0
-        none = 0
+        #created a dictionary to store the variables and their counts
+        sports = {"archery": 0, "basketball": 0, "boxing": 0, "cycling": 0, 
+          "diving": 0, "gymnastics": 0, "high_jumping": 0, "hurdling": 0,
+          "marathon": 0, "rowing": 0, "running": 0, "shooting": 0, 
+          "soccer": 0, "sprinting": 0, "swimming": 0, "tennis": 0, 
+          "throwing": 0, "volleyball": 0, "water_polo": 0, 
+          "weightlifting": 0, "wrestling": 0, "none": 0}
+
         
         print("Get ready!")
         time.sleep(1)
@@ -91,11 +77,14 @@ def main():
         time.sleep(1)
         print("Go!")
         time.sleep(1)
+
+        #First question and selections printed from questions dictionary
         print(question1["Question"])
         print(question1_list[1])
         print(question1_list[2])
         print(question1_list[3])
         
+        #begin while loop for answer input
         while True:
                 try:
                         q1answer = input("\nPlease choose letter A, B or C \n")
@@ -104,25 +93,25 @@ def main():
                                 print("Please make a valid choice between A, B or C")
                                 continue
                         elif q1answer == "A":
-                               basketball += 1
-                               high_jumping +=1
-                               boxing += 1 
-                               hurdling += 1 
-                               rowing += 1 
-                               swimming += 1 
-                               tennis += 1 
-                               throwing += 1 
-                               volleyball += 1
+                               sports["basketball"] += 1
+                               sports["high_jumping"] +=1
+                               sports["boxing"] += 1 
+                               sports["hurdling"] += 1 
+                               sports["rowing"] += 1 
+                               sports["swimming"] += 1 
+                               sports["tennis"] += 1 
+                               sports["throwing"] += 1 
+                               sports["volleyball"] += 1
                         elif q1answer == "B":
-                                cycling +=1
-                                soccer += 1
-                                wrestling += 1
+                                sports["cycling"] +=1
+                                sports["soccer"] += 1
+                                sports["wrestling"] += 1
                         elif q1answer == "C":
-                                gymnastics += 1
-                                diving += 1
-                                marathon += 1
-                                sprinting += 1
-                                weightlifting += 1
+                                sports["gymnastics"] += 1
+                                sports["diving"] += 1
+                                sports["marathon"] += 1
+                                sports["sprinting"] += 1
+                                sports["weightlifting"] += 1
                         break
                 except Exception as x:
                         print("Try again!", x)
@@ -140,22 +129,22 @@ def main():
                                 print("Please make a valid choice between A or B")
                                 continue
                         elif q2answer == "A":
-                                basketball += 1 
-                                cycling += 1 
-                                high_jumping += 1
-                                hurdling += 1
-                                rowing += 1
-                                running += 1
-                                volleyball += 1
+                                sports["basketball"] += 1 
+                                sports["cycling"] += 1 
+                                sports["high_jumping"] += 1
+                                sports["hurdling"] += 1
+                                sports["rowing"] += 1
+                                sports["running"] += 1
+                                sports["volleyball"] += 1
                         elif q2answer == "B":
-                                boxing += 1
-                                diving += 1
-                                gymnastics += 1
-                                sprinting += 1
-                                swimming += 1
-                                throwing += 1
-                                water_polo += 1
-                                wrestling += 1
+                                sports["boxing"] += 1
+                                sports["diving"] += 1
+                                sports["gymnastics"] += 1
+                                sports["sprinting"] += 1
+                                sports["swimming"] += 1
+                                sports["throwing"] += 1
+                                sports["water_polo"] += 1
+                                sports["wrestling"] += 1
                         break
                 except:
                         print("Try again!")
@@ -172,16 +161,16 @@ def main():
                                 print("Please make a valid choice between A or B")
                                 continue
                         elif q3answer == "A":
-                                basketball += 1 
-                                boxing += 1
-                                rowing += 1
-                                swimming += 1
-                                throwing += 1
-                                water_polo += 1
-                                volleyball += 1
+                                sports["basketball"] += 1 
+                                sports["boxing"] += 1
+                                sports["rowing"] += 1
+                                sports["swimming"] += 1
+                                sports["throwing"] += 1
+                                sports["water_polo"] += 1
+                                sports["volleyball"] += 1
                         elif q3answer == "B":
-                                gymnastics += 1
-                                weightlifting += 1
+                                sports["gymnastics"] += 1
+                                sports["weightlifting"] += 1
                         break
                 except:
                         print("Try again!")    
@@ -200,23 +189,23 @@ def main():
                                 print("Please make a valid choice between A, B, C or D")
                                 continue
                         elif q4answer == "A":
-                               swimming += 1 
-                               sprinting += 1
+                               sports["swimming"] += 1 
+                               sports["sprinting"] += 1
                         elif q4answer == "B":
-                                basketball +=1
-                                volleyball += 1
-                                swimming += 1
-                                water_polo += 1
-                                weightlifting += 1
+                                sports["basketball"] +=1
+                                sports["volleyball"] += 1
+                                sports["swimming"] += 1
+                                sports["water_polo"] += 1
+                                sports["weightlifting"] += 1
                         elif q4answer == "C":
-                                swimming += 1 
-                                sprinting += 1
-                                basketball +=1
-                                volleyball += 1
-                                water_polo += 1
-                                weightlifting += 1
+                                sports["swimming"] += 1 
+                                sports["sprinting"] += 1
+                                sports["basketball"] +=1
+                                sports["volleyball"] += 1
+                                sports["water_polo"] += 1
+                                sports["weightlifting"] += 1
                         elif q4answer == "D":
-                                none += 1
+                                sports["none"] += 1
                         break
                 except Exception as x:
                         print("Try again!", x)
@@ -234,18 +223,18 @@ def main():
                                 print("Please make a valid choice between A, B, or C")
                                 continue
                         elif q5answer == "A":
-                                boxing += 1 
-                                rowing += 1
-                                swimming += 1
-                                water_polo += 1
-                                throwing += 1
+                                sports["boxing"] += 1 
+                                sports["rowing"] += 1
+                                sports["swimming"] += 1
+                                sports["water_polo"] += 1
+                                sports["throwing"] += 1
                         elif q5answer == "B":
-                                cycling +=1
-                                gymnastics += 1
-                                marathon += 1
-                                weightlifting += 1
+                                sports["cycling"] +=1
+                                sports["gymnastics"] += 1
+                                sports["marathon"] += 1
+                                sports["weightlifting"] += 1
                         elif q5answer == "C":
-                                none += 1
+                                sports["none"] += 1
                         break
                 except Exception as x:
                         print("Try again!", x) 
@@ -264,49 +253,32 @@ def main():
                                 print("Please make a valid choice between A, B, C or D")
                                 continue
                         elif q6answer == "A":
-                               archery += 1 
-                               boxing += 1
-                               gymnastics += 1
-                               tennis += 1
+                               sports["archery"] += 1 
+                               sports["boxing"] += 1
+                               sports["gymnastics"] += 1
+                               sports["tennis"] += 1
                         elif q6answer == "B":
-                                cycling +=1
-                                sprinting += 1
-                                hurdling += 1
-                                soccer += 1
+                                sports["cycling"] +=1
+                                sports["sprinting"] += 1
+                                sports["hurdling"] += 1
+                                sports["soccer"] += 1
                         elif q6answer == "C":
-                                rowing += 1
-                                swimming += 1
-                                water_polo += 1
-                                weightlifting += 1
-                                wrestling += 1
+                                sports["rowing"] += 1
+                                sports["swimming"] += 1
+                                sports["water_polo"] += 1
+                                sports["weightlifting"] += 1
+                                sports["wrestling"] += 1
                         elif q6answer == "D":
-                                high_jumping += 1
-                                marathon += 1
-                                volleyball += 1
+                                sports["high_jumping"] += 1
+                                sports["marathon"] += 1
+                                sports["volleyball"] += 1
                         break
                 except Exception as x:
                         print("Try again!", x)
 
-        print("basketball", basketball)
-        print("boxing", boxing)
-        print("cycling", cycling)
-        print("diving", diving)
-        print("gymnastics", gymnastics)
-        print("high jumping", high_jumping)
-        print("hurdling", hurdling)
-        print("marathon", marathon)
-        print("rowing", rowing)
-        print("running", running)
-        print("shooting", shooting)
-        print("soccer", soccer)
-        print("sprinting", sprinting)
-        print("swimming", swimming)
-        print("tennis", tennis)
-        print("throwing", throwing)
-        print("volleyball", volleyball)
-        print("water polo", water_polo)
-        print("weightlifting", weightlifting)
-        print("wrestling", wrestling)
-        print("none", none)
 
+        # find the variable with the highest count
+        max_sport = max(sports, key=sports.get)
+        print("Your body is best suited for:", max_sport, "\nStart training for the gold!")
+        
 main()
