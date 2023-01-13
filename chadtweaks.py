@@ -15,7 +15,7 @@ from pyinputplus import inputMenu
 # user search options
 diet=["balanced", "high-fiber", "high-protein", "low-carb", "low-fat", "low-sodium"]
 health=["dairy-free", "egg-free", "gluten-free", "paleo", "peanut-free", "shellfish-free", "soy-free", "vegan", "vegetarian"]
-mealType=["breakfast", "brunch", "lunch/dinner", "snack"]
+mealType=["breakfast", "brunch", "lunch", "dinner", "snack"]
 
 diet= inputMenu(diet, numbered=True)
 health= inputMenu(health, numbered=True)
@@ -40,8 +40,11 @@ def main():
     json_data = json.loads(data)
 
     #loop through the recipes and print their names
-    for recipe in json_data['hits']:
-        print(recipe['recipe']["label"])
+    for recipe in json_data["hits"]:
+        print(recipe["recipe"]["label"])
+        print(recipe["recipe"]["url"])
+        print(recipe["recipe"]["ingredientLines"], sep = "\n")
+        print("")
 
 if __name__ == '__main__':
     main()
