@@ -7,19 +7,24 @@
 import os
 import urllib.request
 import json
-
+from pyinputplus import inputMenu
 
 
 # define base URL
-base_url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=008acd60&app_key=a1ed70789362dcf0ee8c4977a77efb2e&diet={}&health{}&mealType{}"
 
 # user search options
 diet=["balanced", "high-fiber", "high-protein", "low-carb", "low-fat", "low-sodium"]
-health=["dairy-free", "egg-free", "gluten-free", "paleo", "peanut-free", "shellfish-free", "soy-free", "vegan", "vegetarian"],
+health=["dairy-free", "egg-free", "gluten-free", "paleo", "peanut-free", "shellfish-free", "soy-free", "vegan", "vegetarian"]
 mealType=["breakfast", "brunch", "lunch/dinner", "snack"]
 
-#build the full URL
-API = base_url.format(diet, health, mealType)
+diet= inputMenu(diet, numbered=True)
+health= inputMenu(health, numbered=True)
+mealType= inputMenu(mealType, numbered=True)
+
+
+API = f"https://api.edamam.com/api/recipes/v2?type=public&app_id=008acd60&app_key=a1ed70789362dcf0ee8c4977a77efb2e&diet={diet}&health={health}&mealType={mealType}"
+
+print(API)
 
 def main():
     """run time code"""
@@ -36,7 +41,7 @@ def main():
 
     #loop through the recipes and print their names
     for recipe in json_data['hits']:
-        print(recipe['recipe'][label])
+        print(recipe['recipe']["label"])
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
